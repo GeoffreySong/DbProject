@@ -26,10 +26,10 @@ namespace WcfClientLibrary.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("net.tcp://localhost:8090/PizzaService")]
-        public string WcfClientLibrary_PIzzaServiceWebReference_PizzaService {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8080/DataService")]
+        public string WcfClientLibrary_DataServiceWebReference_DataService {
             get {
-                return ((string)(this["WcfClientLibrary_PIzzaServiceWebReference_PizzaService"]));
+                return ((string)(this["WcfClientLibrary_DataServiceWebReference_DataService"]));
             }
         }
     }

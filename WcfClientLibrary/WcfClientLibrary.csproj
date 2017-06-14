@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +11,7 @@
     <AssemblyName>WcfClientLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,36 +43,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProcessingIncomingMessageClient.cs" />
+    <Compile Include="DataServiceClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\PIzzaServiceWebReference\Reference.cs">
+    <Compile Include="Web References\DataServiceWebReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:8080/PizzaService/mex">
+    <WebReferenceUrl Include="http://localhost:8080/DataService">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\PIzzaServiceWebReference\</RelPath>
-      <UpdateFromURL>http://localhost:8080/PizzaService/mex</UpdateFromURL>
+      <RelPath>Web References\DataServiceWebReference\</RelPath>
+      <UpdateFromURL>http://localhost:8080/DataService</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>WcfClientLibrary_PIzzaServiceWebReference_PizzaService</CachedSettingsPropName>
+      <CachedSettingsPropName>WcfClientLibrary_DataServiceWebReference_DataService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
@@ -80,23 +81,30 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\PIzzaServiceWebReference\mex.xsd">
+    <None Include="Web References\DataServiceWebReference\DataService.wsdl" />
+    <None Include="Web References\DataServiceWebReference\DataService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\PIzzaServiceWebReference\mex0.xsd">
+    <None Include="Web References\DataServiceWebReference\DataService0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\PIzzaServiceWebReference\mex1.xsd">
+    <None Include="Web References\DataServiceWebReference\DataService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\PIzzaServiceWebReference\PizzaService.wsdl" />
-    <None Include="Web References\PIzzaServiceWebReference\Reference.map">
+    <None Include="Web References\DataServiceWebReference\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\PIzzaServiceWebReference\mex.disco" />
+    <None Include="Web References\DataServiceWebReference\DataService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
