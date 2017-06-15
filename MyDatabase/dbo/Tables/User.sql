@@ -6,6 +6,8 @@
     [Password] VARCHAR(20) NOT NULL, 
     [RowStatus] TINYINT NOT NULL, 
     [UpdatedBy] INT NOT NULL, 
-    [UpdatedDate] DATETIME2(0) NOT NULL, 
+    [UpdatedDate] DATETIME2(7) NOT NULL, 
     CONSTRAINT [FK_User_Person] FOREIGN KEY ([Person_Id]) REFERENCES [Person]([Id])
 )
+
+GO

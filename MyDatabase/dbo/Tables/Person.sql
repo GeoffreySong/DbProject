@@ -10,5 +10,5 @@
     [PrimaryPhone] VARCHAR(20) NULL, 
     [RowStatus] TINYINT NOT NULL, 
     [UpdatedBy] INT NOT NULL, 
-    [UpdatedDate] DATETIME2(0) NOT NULL    
+    [UpdatedDate] DATETIME2(7) NOT NULL    
 )
