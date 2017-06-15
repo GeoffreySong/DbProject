@@ -10,7 +10,13 @@ namespace WcfClientLibrary
 {
     public class DataServiceClient
     {
-        public async Task SendDataChangeMessageAsync(DataServiceWebReference.DataChangeMessage message)
+		public void SendDataChangeMessage(DataServiceWebReference.DataChangeMessage message)
+		{
+			var proxy = new DataServiceWebReference.DataService();
+			proxy.ProcessDataChangeAsync(message);
+		}
+
+		public async Task SendDataChangeMessageAsync(DataServiceWebReference.DataChangeMessage message)
         {
             await Task.Run(() =>
             {
