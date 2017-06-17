@@ -4,11 +4,15 @@
     [FirstName] VARCHAR(50) NOT NULL, 
     [MidName] VARCHAR(50) NULL, 
     [LastName] VARCHAR(50) NOT NULL, 
-    [Suffix] VARBINARY(50) NULL, 
+    [Suffix] VARBINARY(20) NULL, 
     [DateOfBirth] DATETIME2(0) NOT NULL, 
-    [Email] VARCHAR(50) NULL, 
+    [Email] VARCHAR(100) NULL, 
     [PrimaryPhone] VARCHAR(20) NULL, 
     [RowStatus] TINYINT NOT NULL, 
     [UpdatedBy] INT NOT NULL, 
-    [UpdatedDate] DATETIME2(7) NOT NULL    
+    [UpdatedDate] DATETIME2(2) GENERATED ALWAYS AS ROW START,
+	[ValidToDate] DATETIME2(2) GENERATED ALWAYS AS ROW END,
+	PERIOD FOR SYSTEM_TIME (UpdatedDate, ValidToDate)    
 )
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.PersonHistory))
+GO
